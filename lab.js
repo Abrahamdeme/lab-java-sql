@@ -113,47 +113,47 @@ VALUES
 SELECT COUNT(*) AS TotalFlights
 FROM Flight;
 
-// Instructions 4
+// SQL Queries for Average Flight Distance
 
 SELECT AVG(FlightMileage) AS AverageFlightDistance
 FROM Airline;
 
-// Instructions 5
+// SQL Queries for Average Number of Seats
 
 SELECT AVG(TotalAircraftSeats) AS AverageSeats
 FROM Airline;
 
-// Instructions 6
+//SQL Queries for Average Number of Miles Flown by Customers Grouped by Status
 
 SELECT CustomerStatus, AVG(TotalCustomerMileage) AS AverageMileage
 FROM Airline
 GROUP BY CustomerStatus;
 
-// Instructions 7
+// SQL Queries for Maximum Number of Miles Flown by Customers Grouped by Status
 SELECT CustomerStatus, MAX(TotalCustomerMileage) AS MaxMileage
 FROM Airline
 GROUP BY CustomerStatus;
 
 
-// Instructions 8
+// SQL Queries for Total Number of Aircraft with Name Containing Boeing
 SELECT COUNT(DISTINCT Aircraft) AS TotalBoeingAircraft
 FROM Airline
 WHERE Aircraft LIKE '%Boeing%';
 
 
-// Instructions 9
+// SQL Queries for Flights with Distance Between 300 and 2000 Miles
 SELECT FlightNumber, Aircraft, FlightMileage
 FROM Airline
 WHERE FlightMileage BETWEEN 300 AND 2000;
 
 
-// Instructions 10
+// SQL Queries for Average Flight Distance Booked Grouped by Customer Status
 
 SELECT CustomerStatus, AVG(FlightMileage) AS AvgFlightDistance
 FROM Airline
 GROUP BY CustomerStatus;
 
-// Instructions 11
+// SQL Queries for Most Often Booked Aircraft by Gold Members
 SELECT Aircraft, COUNT(Aircraft) AS BookedCount
 FROM Airline
 WHERE CustomerStatus = 'Gold'
